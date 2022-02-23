@@ -8,7 +8,7 @@ if password.len == 0:
 suite "Test Postgis":
   echo "connect to pg"
 
-  let db = open("localhost", "test", password, "port=6543 dbname=mydb")
+  let db = open("localhost", "test", password, "port=6543 dbname=test")
 
   test "check spatial_ref_sys table":
     let tables = db.getAllRows(sql"select tablename from pg_tables where schemaname='public'").mapIt(it[0])
