@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      -
+      
     - name: Extract branch name
       id: extract_branch
       shell: bash
