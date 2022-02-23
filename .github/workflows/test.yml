@@ -31,11 +31,11 @@ jobs:
     - uses: jiro4989/setup-nim-action@v1.0.1
 
     - name: Run custom port test
-      run: nim c -r tests/custom-connection.nim
+      run: nim c -r tests/custom_connection.nim
       env:
         password: ${{ secrets.DatabasePassword }}
 
     - name: Run default port test
-      run: nim c -r tests/default-connection.nim
+      run: nim c -r tests/default_connection.nim
       env:
         password: ${{ secrets.DatabasePassword }}
