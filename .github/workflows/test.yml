@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Test Using Echo
-      run: join(aryeohq/postgis-action@, '${GITHUB_REF##*/}')
+      run: aryeohq/postgis-action@'${GITHUB_REF##*/}'
 
 #    - name: Set up Postgresql with Postgis
 #      uses: join(aryeohq/postgis-action@, '${GITHUB_REF##*/}')
