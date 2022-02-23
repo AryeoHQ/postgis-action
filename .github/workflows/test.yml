@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v1
       
     - name: Set up Postgresql with Postgis
-      uses: huaxk/postgis-action@v1
+      uses: aryeohq/postgis-action@latest
       with:
         postgresql user: 'test'
         postgresql password: ${{ secrets.DatabasePassword }}
