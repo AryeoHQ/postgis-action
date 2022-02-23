@@ -19,7 +19,7 @@ jobs:
       run: echo "${GITHUB_REF}"
 
     - name: Set up Postgresql with Postgis
-      uses: aryeohq/postgis-action@"${GITHUB_REF}"
+      uses: "aryeohq/postgis-action@" . "${GITHUB_REF}"
       with:
         postgresql user: 'test'
         postgresql password: ${{ secrets.DatabasePassword }}
