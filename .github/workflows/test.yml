@@ -10,10 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - run: echo ${{ github.GITHUB_REF }}
-
     - name: Set up Postgresql with Postgis
-      uses: aryeohq/postgis-action@v1
+      uses: aryeohq/postgis-action@${{ github.ref_name }}
       with:
         postgresql user: 'test'
         postgresql password: ${{ secrets.DatabasePassword }}
