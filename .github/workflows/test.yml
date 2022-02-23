@@ -10,16 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Extract branch name
-      id: extract_branch
-      shell: bash
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-
-    - name: Test Using Echo
-      run: echo "${GITHUB_REF}"
-
     - name: Set up Postgresql with Postgis
-      uses: "aryeohq/postgis-action@" . "${GITHUB_REF}"
+      uses: join(aryeohq/postgis-action@, '${GITHUB_REF}')
       with:
         postgresql user: 'test'
         postgresql password: ${{ secrets.DatabasePassword }}
