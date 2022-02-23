@@ -10,18 +10,16 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - run: echo $GITHUB_CONTEXT
+    - name: Set up Postgresql with Postgis
+      uses: aryeohq/postgis-action@${{ ref }}
+      with:
+        postgresql user: 'test'
+        postgresql password: ${{ secrets.DatabasePassword }}
+        postgresql db: 'test'
 
-#    - name: Set up Postgresql with Postgis
-#      uses: aryeohq/postgis-action@${{ github.event.push.head_commit.id }}
-#      with:
-#        postgresql user: 'test'
-#        postgresql password: ${{ secrets.DatabasePassword }}
-#        postgresql db: 'test'
-#
-#    - uses: jiro4989/setup-nim-action@v1.0.1
-#
-#    - name: Run test
-#      run: nim c -r tests/connection.nim
-#      env:
-#        password: ${{ secrets.DatabasePassword }}
+    - uses: jiro4989/setup-nim-action@v1.0.1
+
+    - name: Run test
+      run: nim c -r tests/connection.nim
+      env:
+        password: ${{ secrets.DatabasePassword }}
