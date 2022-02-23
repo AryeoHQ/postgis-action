@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v1
       
     - name: Set up Postgresql with Postgis
-      uses: aryeohq/postgis-action@${{GITHUB_REF}}
+      uses: aryeohq/postgis-action@${{ github.event.push.head_commit.id }}
       with:
         postgresql user: 'test'
         postgresql password: ${{ secrets.DatabasePassword }}
