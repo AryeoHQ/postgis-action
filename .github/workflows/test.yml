@@ -11,7 +11,6 @@ jobs:
     - uses: actions/checkout@v1
 
     - run: echo ${{ github }}
-    - run: echo ${{ push }}
 
 #    - name: Set up Postgresql with Postgis
 #      uses: aryeohq/postgis-action@${{ github.ref }}
