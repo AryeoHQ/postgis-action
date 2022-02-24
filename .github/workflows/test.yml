@@ -37,3 +37,5 @@ jobs:
 
     - name: Run default port test
       run: nim c -r tests/defaultPortConnection.nim
+      env:
+        password: ${{ secrets.DatabasePassword }}
